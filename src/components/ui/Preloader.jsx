@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 
-export default function Preloader() {
+export default function Preloader({ onReady }) {
   const [isComplete, setIsComplete] = useState(false);
   const preloaderRef = useRef(null);
   const percentRef = useRef(null);
@@ -51,6 +51,9 @@ export default function Preloader() {
         yPercent: -100,
         duration: 0.8,
         ease: "power4.inOut",
+        onStart: () => {
+          if (onReady) onReady();
+        },
         onComplete: () => setIsComplete(true),
       });
 
@@ -65,7 +68,7 @@ export default function Preloader() {
   return (
     <div
       ref={preloaderRef}
-      className="fixed inset-0 z-[9999] bg-background flex items-center justify-center flex-col"
+      className="fixed inset-0 z-[9999] bg-[#050A15] flex items-center justify-center flex-col"
     >
       <div className="overflow-hidden mb-6">
         <h1
@@ -81,9 +84,9 @@ export default function Preloader() {
           className="absolute top-0 left-0 h-full bg-primary origin-left scale-x-0 shadow-[0_0_12px_hsl(var(--primary))]"
         ></div>
       </div>
-      <div className="mt-6 flex justify-between w-64 font-['Fira_Code',monospace] text-xs text-primary/50 tracking-widest uppercase">
+      <div className="mt-6 flex justify-between w-64 font-['Fira_Code',monospace] text-xs text-primary/70 tracking-widest uppercase">
         <span>SYS.MEM</span>
-        <span className="text-secondary" ref={percentRef}>
+        <span className="text-secondary font-bold" ref={percentRef}>
           0%
         </span>
       </div>
