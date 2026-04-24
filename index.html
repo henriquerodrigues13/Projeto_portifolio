@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="pt-BR" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Henrique — Front-end &amp; UI Systems</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body class="selection:bg-primary/25 selection:text-foreground min-h-screen antialiased text-foreground">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Henrique — Front-end &amp; UI Systems</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+          },
+          extend: {
+            colors: {
+              border: "hsl(var(--border) / <alpha-value>)",
+              input: "hsl(var(--input) / <alpha-value>)",
+              ring: "hsl(var(--ring) / <alpha-value>)",
+              background: "hsl(var(--background) / <alpha-value>)",
+              foreground: "hsl(var(--foreground) / <alpha-value>)",
+              primary: {
+                DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+                foreground: "hsl(var(--primary-foreground) / <alpha-value>)",
+              },
+              secondary: {
+                DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
+                foreground: "hsl(var(--secondary-foreground) / <alpha-value>)",
+              },
+              muted: {
+                DEFAULT: "hsl(var(--muted) / <alpha-value>)",
+                foreground: "hsl(var(--muted-foreground) / <alpha-value>)",
+              },
+              accent: {
+                DEFAULT: "hsl(var(--accent) / <alpha-value>)",
+                foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
+              },
+              destructive: {
+                DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
+                foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
+              },
+              card: {
+                DEFAULT: "hsl(var(--card) / <alpha-value>)",
+                foreground: "hsl(var(--card-foreground) / <alpha-value>)",
+              },
+            },
+            borderRadius: {
+              lg: "var(--radius)",
+              md: "calc(var(--radius) - 2px)",
+              sm: "calc(var(--radius) - 4px)",
+            },
+            backgroundImage: {
+              "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+              glass:
+                "linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --radius: 0.75rem;
+      }
+      /* shadcn/ui semantic tokens — dark, azul primário, laranja secundário */
+      .dark {
+        --background: 0 0% 2%;
+        --foreground: 214 32% 91%;
+        --card: 222 24% 6%;
+        --card-foreground: 214 32% 91%;
+        --popover: 222 24% 6%;
+        --popover-foreground: 214 32% 91%;
+        --primary: 217 91% 60%;
+        --primary-foreground: 222 47% 11%;
+        --secondary: 24 95% 53%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 215 20% 14%;
+        --muted-foreground: 217 10% 64%;
+        --accent: 24 95% 53%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 62% 50%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 215 16% 18%;
+        --input: 215 16% 18%;
+        --ring: 217 91% 60%;
+      }
+
+      body {
+        background-color: hsl(var(--background));
+        color: hsl(var(--foreground));
+        overflow-x: hidden;
+        cursor: default;
+      }
+
+      .tracking-tighter-custom {
+        letter-spacing: -0.04em;
+      }
+
+      .glass-panel {
+        background: rgba(10, 10, 10, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .glass-card {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.03) 0%,
+          rgba(255, 255, 255, 0.01) 100%
+        );
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .text-gradient-hero {
+        background: linear-gradient(
+          105deg,
+          hsl(var(--foreground) / 0.92),
+          hsl(var(--primary)),
+          hsl(var(--secondary) / 0.95)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .btn-glow-subtle {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-glow-subtle::before {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background: radial-gradient(
+          circle at 50% 50%,
+          hsl(var(--primary) / 0.22) 0%,
+          transparent 55%
+        );
+        opacity: 0;
+        transform: scale(0.85);
+        transition: opacity 0.45s ease, transform 0.45s ease;
+        pointer-events: none;
+      }
+      .btn-glow-subtle:hover::before {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      @keyframes gradient-drift {
+        0%,
+        100% {
+          opacity: 0.55;
+          transform: scale(1) translate(0, 0);
+        }
+        50% {
+          opacity: 0.85;
+          transform: scale(1.08) translate(2%, -2%);
+        }
+      }
+
+      @keyframes hero-rise {
+        0% {
+          opacity: 0;
+          transform: translateY(26px) scale(0.985);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      .hero-aurora {
+        position: absolute;
+        inset: -20%;
+        background: radial-gradient(
+            circle at 20% 20%,
+            hsl(var(--primary) / 0.14),
+            transparent 45%
+          ),
+          radial-gradient(circle at 80% 30%, hsl(var(--secondary) / 0.1), transparent 42%),
+          radial-gradient(circle at 50% 80%, hsl(var(--primary) / 0.08), transparent 50%);
+        filter: blur(0px);
+        animation: gradient-drift 22s ease-in-out infinite;
+        pointer-events: none;
+      }
+
+      .hero-grid {
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(
+            rgba(255, 255, 255, 0.03) 1px,
+            transparent 1px
+          ),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 56px 56px;
+        mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 20%, transparent 75%);
+        opacity: 0.35;
+        pointer-events: none;
+      }
+
+      .hero-enter {
+        opacity: 0;
+        transform: translateY(26px) scale(0.985);
+        animation: hero-rise 0.88s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+      .hero-delay-1 {
+        animation-delay: 0.12s;
+      }
+      .hero-delay-2 {
+        animation-delay: 0.24s;
+      }
+      .hero-delay-3 {
+        animation-delay: 0.38s;
+      }
+      .hero-delay-4 {
+        animation-delay: 0.52s;
+      }
+
+      /* Mesmo layout do Aura; z-index 0 evita ficar atrás do fundo opaco do body */
+      #canvas-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.6;
+        pointer-events: none;
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: hsl(var(--background));
+      }
+      ::-webkit-scrollbar-thumb {
+        background: hsl(var(--muted));
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: hsl(var(--primary) / 0.45);
+      }
+    </style>
+  </head>
+  <body
+    class="selection:bg-primary/25 selection:text-foreground min-h-screen antialiased text-foreground"
+  >
+    <!-- Mesmo padrão do ai-portfolio-94: canvas full-screen atrás do conteúdo -->
+    <canvas id="canvas-container" aria-hidden="true"></canvas>
+    <div
+      class="pointer-events-none fixed inset-0 z-[1] bg-[radial-gradient(ellipse_at_top,_hsl(var(--primary)/0.08),_transparent_55%)]"
+    ></div>
+
+    <div id="root" class="relative z-10"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" data-presets="react">
+      const { useEffect, useRef, useCallback } = React;
+
+      function cn(...parts) {
+        return parts.filter(Boolean).join(" ");
+      }
+
+      /** Estilo shadcn/ui — variantes alinhadas à base React Router + Tailwind tokens */
+      const Button = React.forwardRef(function Button(
+        { className, variant = "default", size = "default", ...props },
+        ref
+      ) {
+        const base =
+          "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+        const variants = {
+          default:
+            "bg-primary text-primary-foreground shadow hover:bg-primary/90 active:scale-[0.98]",
+          outline:
+            "border border-input bg-background/40 backdrop-blur-md hover:bg-accent/10 hover:text-accent-foreground hover:border-primary/35",
+          ghost: "hover:bg-accent/10 hover:text-accent-foreground",
+        };
+        const sizes = {
+          default: "h-11 px-8 py-2",
+          lg: "h-12 px-10 text-[0.95rem]",
+          sm: "h-9 px-4",
+          icon: "h-10 w-10",
+        };
+        return (
+          <button
+            ref={ref}
+            className={cn(base, variants[variant], sizes[size], className)}
+            {...props}
+          />
+        );
+      });
+
+      function useMagnetic(strength = 0.18) {
+        const ref = useRef(null);
+        const onMove = useCallback(
+          (e) => {
+            const el = ref.current;
+            if (!el) return;
+            const r = el.getBoundingClientRect();
+            const x = e.clientX - r.left - r.width / 2;
+            const y = e.clientY - r.top - r.height / 2;
+            el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+          },
+          [strength]
+        );
+        const onLeave = useCallback(() => {
+          const el = ref.current;
+          if (!el) return;
+          el.style.transform = "translate(0, 0)";
+        }, []);
+        return { ref, onMouseMove: onMove, onMouseLeave: onLeave };
+      }
+
+      /**
+       * Fundo animado idêntico em comportamento ao script do
+       * ai-portfolio-94.aura.build(1)/index.html (partículas + malha).
+       */
+      function AuraParticleCanvas() {
+        useEffect(() => {
+          const canvas = document.getElementById("canvas-container");
+          if (!canvas) return;
+          const ctx = canvas.getContext("2d");
+          let width;
+          let height;
+          let particles = [];
+          let raf = 0;
+          let cancelled = false;
+
+          const particleCount = 60;
+          const connectionDistance = 150;
+
+          function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+          }
+
+          class Particle {
+            constructor() {
+              this.x = Math.random() * width;
+              this.y = Math.random() * height;
+              this.vx = (Math.random() - 0.5) * 0.3;
+              this.vy = (Math.random() - 0.5) * 0.3;
+              this.size = Math.random() * 2;
+              this.color = `rgba(${147 + Math.random() * 50}, 51, 234, ${
+                Math.random() * 0.5 + 0.1
+              })`;
+            }
+
+            update() {
+              this.x += this.vx;
+              this.y += this.vy;
+              if (this.x < 0 || this.x > width) this.vx *= -1;
+              if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+
+            draw() {
+              ctx.beginPath();
+              ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+              ctx.fillStyle = this.color;
+              ctx.fill();
+            }
+          }
+
+          function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+              particles.push(new Particle());
+            }
+          }
+
+          function animateCanvas() {
+            if (cancelled) return;
+            ctx.clearRect(0, 0, width, height);
+
+            particles.forEach((p, index) => {
+              p.update();
+              p.draw();
+
+              for (let j = index + 1; j < particles.length; j++) {
+                const p2 = particles[j];
+                const dx = p.x - p2.x;
+                const dy = p.y - p2.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < connectionDistance) {
+                  ctx.beginPath();
+                  ctx.strokeStyle = `rgba(139, 92, 246, ${
+                    1 - (dist / connectionDistance) * 0.15
+                  })`;
+                  ctx.lineWidth = 0.5;
+                  ctx.moveTo(p.x, p.y);
+                  ctx.lineTo(p2.x, p2.y);
+                  ctx.stroke();
+                }
+              }
+            });
+
+            raf = requestAnimationFrame(animateCanvas);
+          }
+
+          function onResize() {
+            resize();
+            initParticles();
+          }
+
+          onResize();
+          animateCanvas();
+          window.addEventListener("resize", onResize);
+
+          return () => {
+            cancelled = true;
+            window.removeEventListener("resize", onResize);
+            cancelAnimationFrame(raf);
+          };
+        }, []);
+
+        return null;
+      }
+
+      function Hero() {
+        const magnetic = useMagnetic(0.16);
+
+        return (
+          <main className="relative z-10 min-h-screen w-full overflow-hidden">
+            <AuraParticleCanvas />
+
+            <header className="pointer-events-none absolute left-0 right-0 top-0 z-20 px-6 pt-8 md:px-10">
+              <div className="mx-auto flex max-w-6xl items-center justify-between">
+                <div className="pointer-events-auto glass-panel rounded-full px-4 py-2 text-xs font-medium text-muted-foreground">
+                  <span className="text-foreground/90">Henrique</span>
+                  <span className="mx-2 text-border">/</span>
+                  <span>Portfólio</span>
+                </div>
+                <div className="hidden text-xs text-muted-foreground md:block">
+                  UI systems · motion · performance
+                </div>
+              </div>
+            </header>
+
+            <section
+              className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-28 md:px-10"
+              aria-label="Apresentação principal"
+            >
+              <div className="hero-aurora" />
+              <div className="hero-grid" />
+
+              <div className="absolute left-1/2 top-1/2 z-0 h-[min(520px,70vw)] w-[min(520px,70vw)] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[100px]" />
+              <div className="absolute left-[18%] top-[22%] z-0 h-40 w-40 rounded-full bg-secondary/10 blur-[80px] md:h-52 md:w-52" />
+
+              <div className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center text-center">
+                <div
+                  className={cn(
+                    "hero-enter hero-delay-1 glass-card mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-xs font-medium text-muted-foreground"
+                  )}
+                >
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/50 opacity-60" />
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+                  </span>
+                  Aberto a colaborações pontuais
+                </div>
+
+                <h1
+                  className={cn(
+                    "hero-enter hero-delay-2 tracking-tighter-custom text-balance text-5xl font-semibold leading-[1.08] text-foreground md:text-7xl lg:text-8xl"
+                  )}
+                >
+                  Interfaces que
+                  <br />
+                  <span className="text-gradient-hero">respiram clareza</span>
+                </h1>
+
+                <p
+                  className={cn(
+                    "hero-enter hero-delay-3 mt-7 max-w-2xl text-balance text-lg font-light tracking-tight text-muted-foreground md:text-2xl"
+                  )}
+                >
+                  Construo experiências web com ritmo, hierarquia impecável e
+                  detalhes que somam — do layout ao microcopy.
+                </p>
+
+                <p
+                  className={cn(
+                    "hero-enter hero-delay-3 mt-4 max-w-xl text-sm text-muted-foreground/80 md:text-base"
+                  )}
+                >
+                  Front-end · Design systems · Prototipagem · Acessibilidade
+                </p>
+
+                <div
+                  className={cn(
+                    "hero-enter hero-delay-4 mt-12 flex flex-col items-center gap-4 sm:flex-row sm:gap-5"
+                  )}
+                >
+                  <Button
+                    size="lg"
+                    className={cn(
+                      "btn-glow-subtle group relative overflow-hidden rounded-full shadow-lg shadow-primary/15 ring-1 ring-white/10 transition-transform duration-300 hover:scale-[1.03]"
+                    )}
+                    ref={magnetic.ref}
+                    onMouseMove={magnetic.onMouseMove}
+                    onMouseLeave={magnetic.onMouseLeave}
+                    type="button"
+                    onClick={() => {
+                      window.location.hash = "#projetos";
+                    }}
+                  >
+                    <span className="relative z-10 flex items-center gap-2">
+                      Ver projetos
+                      <svg
+                        className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden
+                      >
+                        <path d="M5 12h14M13 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </Button>
+                </div>
+
+              </div>
+            </section>
+          </main>
+        );
+      }
+
+      function App() {
+        return <Hero />;
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
