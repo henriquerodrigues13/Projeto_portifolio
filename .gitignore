@@ -140,6 +140,13 @@ uvicorn.log
 # ============================================
 # OS Files
 # ============================================
+#Pastas específicas do usuário
+/referencias
+/referencias/*
+referencias/
+referencias/*
+
+
 # macOS
 .DS_Store
 .AppleDouble
