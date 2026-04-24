@@ -11,7 +11,7 @@ export default function Preloader({ onReady }) {
   useEffect(() => {
     // 1. Scramble Text Logic
     const chars = "!<>-_\\\\/[]{}—=+*^?#________";
-    const originalText = "> BOOT_SEQ...";
+    const originalText = "> LOAD...";
     let iterations = 0;
 
     const scrambleInterval = setInterval(() => {
@@ -51,10 +51,10 @@ export default function Preloader({ onReady }) {
         yPercent: -100,
         duration: 0.8,
         ease: "power4.inOut",
-        onStart: () => {
+        onComplete: () => {
           if (onReady) onReady();
+          setIsComplete(true);
         },
-        onComplete: () => setIsComplete(true),
       });
 
     return () => {
@@ -75,7 +75,7 @@ export default function Preloader({ onReady }) {
           ref={brandRef}
           className="font-['VT323',monospace] text-4xl tracking-tighter text-primary font-medium"
         >
-          &gt; BOOT_SEQ...
+          &gt; LOAD...
         </h1>
       </div>
       <div className="w-64 h-[1px] bg-primary/20 relative">
