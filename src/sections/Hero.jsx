@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import AuraParticleCanvas from "../components/AuraParticleCanvas.jsx";
 import { Button } from "../components/ui/button.jsx";
 import { cn } from "../lib/utils.js";
@@ -6,6 +7,7 @@ import { useMagnetic } from "../hooks/useMagnetic.js";
 export default function Hero() {
   const magneticProjects = useMagnetic(0.16);
   const magneticContact = useMagnetic(0.16);
+  const heroRef = useRef(null);
 
   return (
     <main className="relative z-10 min-h-screen w-full overflow-hidden">

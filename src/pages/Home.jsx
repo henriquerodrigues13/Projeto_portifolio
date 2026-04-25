@@ -4,8 +4,11 @@ import Habilidades from "../sections/Habilidades.jsx";
 import Hero from "../sections/Hero.jsx";
 import Projetos from "../sections/Projetos.jsx";
 import Sobre from "../sections/Sobre.jsx";
+import { useReveal } from "../hooks/useReveal.js";
 
 export default function Home() {
+  useReveal();
+
   return (
     <div className="relative z-10">
       <Hero />

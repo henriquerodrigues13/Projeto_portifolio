@@ -171,13 +171,11 @@
   }
   
   .app-loaded .hero-enter {
-    opacity: 0;
     filter: blur(12px);
     animation: hero-rise 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) var(--hero-delay, 0s) forwards;
   }
 
   .app-loaded .hero-content-enter {
-    opacity: 0;
     filter: blur(10px);
     animation: hero-content-fade 1.0s cubic-bezier(0.2, 0.8, 0.2, 1) var(--hero-delay, 0s) forwards;
   }
@@ -205,18 +203,28 @@
     pointer-events: none;
   }
 
-  ::-webkit-scrollbar {
-    width: 6px;
+  /* Reveal on Scroll Animations */
+  .reveal {
+    transform: translateY(30px) scale(0.98);
+    filter: blur(8px);
+    transition: all 1.0s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform, opacity, filter;
   }
-  ::-webkit-scrollbar-track {
-    background: hsl(var(--background));
-  }
-  ::-webkit-scrollbar-thumb {
-    background: hsl(var(--muted));
-    border-radius: 3px;
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary) / 0.45);
+
+  .text-shine-blue {
+    background: linear-gradient(
+      to right,
+      #0044cc 0%,
+      #3b82f6 25%,
+      #0044cc 50%,
+      #3b82f6 75%,
+      #0044cc 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+    display: inline-block;
   }
 }
 

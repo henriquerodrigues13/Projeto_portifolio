@@ -1,61 +1,63 @@
-import { cn } from "../lib/utils";
+import { cn } from "../lib/utils.js";
 
 export default function Sobre() {
   return (
     <section
       id="sobre"
-      className="relative z-10 flex min-h-screen w-full flex-col items-center justify-start overflow-hidden px-6 py-16 md:px-10 lg:pt-24 lg:pb-32"
+      className="relative z-10 flex min-h-fit w-full flex-col items-center justify-start px-6 py-10 md:px-10 lg:pt-24 lg:pb-32"
     >
       {/* Background Decor */}
       <div className="absolute right-0 top-1/4 -z-10 h-[500px] w-[500px] rounded-full bg-primary/5 blur-[120px]" />
       
       <div className="mx-auto flex w-full max-w-6xl flex-col items-center gap-16 lg:flex-row lg:items-start lg:gap-24">
         
-        {/* Left Side: Content */}
-        <div className="flex-1 text-left">
-          <div className="hero-enter hero-delay-1 mb-6 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
+        {/* Left Side: Content Box */}
+        <div className="hero-enter hero-delay-1 flex-[1.2] text-left">
+          <div className="mb-4 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-primary">
             Sobre Mim
           </div>
           
-          <h2 className="hero-enter hero-delay-2 mb-8 text-balance text-4xl font-semibold tracking-tighter-custom text-foreground md:text-5xl lg:text-6xl">
-            Onde o código encontra o{" "}
-            <span className="text-primary italic">Design</span>
-          </h2>
-          
-          <div className="hero-enter hero-delay-3 space-y-6 text-lg font-light leading-relaxed text-muted-foreground md:text-xl">
-            <p>
-              Olá! Eu sou <span className="font-medium text-foreground">Henrique Rodrigues</span>, 
-              um desenvolvedor apaixonado por criar interfaces que não apenas funcionam, mas 
-              contam uma história através da clareza e do movimento.
-            </p>
+          <div className="rounded-[2rem] bg-zinc-200/80 p-8 backdrop-blur-2xl md:p-10 shadow-2xl shadow-black/20 border border-white/20">
+            <h2 className="mb-6 text-balance text-3xl font-semibold tracking-tighter-custom text-black md:text-4xl lg:text-5xl">
+              Onde o código encontra o{" "}
+              <span className="font-bold text-shine-blue">Design</span>
+            </h2>
             
-            <p>
-              Minha jornada no desenvolvimento web começou com a curiosidade de como 
-              transformar pixels estáticos em experiências vivas. Hoje, foco em construir 
-              sistemas escaláveis e design systems que unem estética e performance.
-            </p>
-          </div>
+            <div className="space-y-4 text-sm font-light leading-relaxed text-zinc-900 md:text-base">
+              <p>
+                Olá! Eu sou <span className="font-bold text-shine-blue">Henrique Rodrigues</span>, 
+                um desenvolvedor apaixonado por criar interfaces que não apenas funcionam, mas 
+                contam uma história através da clareza e do movimento.
+              </p>
+              
+              <p>
+                Minha jornada no desenvolvimento web começou com a curiosidade de como 
+                transformar pixels estáticos em experiências vivas. Hoje, foco em construir 
+                sistemas escaláveis e design systems que unem estética e performance.
+              </p>
+            </div>
 
-          <div className="hero-enter hero-delay-4 mt-10 flex flex-wrap gap-4">
-            <div className="flex flex-col gap-1">
-              <span className="text-2xl font-bold text-foreground">3+</span>
-              <span className="text-xs uppercase tracking-widest text-muted-foreground">Anos de XP</span>
-            </div>
-            <div className="mx-6 h-12 w-px bg-white/10 hidden sm:block" />
-            <div className="flex flex-col gap-1">
-              <span className="text-2xl font-bold text-foreground">50+</span>
-              <span className="text-xs uppercase tracking-widest text-muted-foreground">Projetos</span>
-            </div>
-            <div className="mx-6 h-12 w-px bg-white/10 hidden sm:block" />
-            <div className="flex flex-col gap-1">
-              <span className="text-2xl font-bold text-foreground">UI/UX</span>
-              <span className="text-xs uppercase tracking-widest text-muted-foreground">Especialista</span>
+            <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-black/10 pt-6">
+              <div className="flex flex-col gap-1">
+                <span className="text-xl font-bold text-black">3+</span>
+                <span className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold">Anos de XP</span>
+              </div>
+              <div className="h-8 w-px bg-black/10 hidden sm:block" />
+              <div className="flex flex-col gap-1">
+                <span className="text-xl font-bold text-black">50+</span>
+                <span className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold">Projetos</span>
+              </div>
+              <div className="h-8 w-px bg-black/10 hidden sm:block" />
+              <div className="flex flex-col gap-1">
+                <span className="text-xl font-bold text-black text-nowrap">UI/UX</span>
+                <span className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold">Especialista</span>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Right Side: Image/Visual */}
-        <div className="hero-enter hero-delay-5 relative flex flex-1 items-center justify-center lg:pt-20">
+        <div className="hero-enter hero-delay-5 relative flex flex-1 items-center justify-center lg:pt-14">
           <div className="relative z-10 aspect-square w-full max-w-[450px] overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl">
             <img
               src="/assets/sobre-pixel-art.png"
