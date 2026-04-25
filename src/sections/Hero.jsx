@@ -1,6 +1,5 @@
 import AuraParticleCanvas from "../components/AuraParticleCanvas.jsx";
 import { Button } from "../components/ui/button.jsx";
-import Header from "../components/layout/Header.jsx";
 import { cn } from "../lib/utils.js";
 import { useMagnetic } from "../hooks/useMagnetic.js";
 
@@ -12,8 +11,6 @@ export default function Hero() {
     <main className="relative z-10 min-h-screen w-full overflow-hidden">
       <AuraParticleCanvas />
       <div className="pointer-events-none fixed inset-0 z-[1] bg-[radial-gradient(ellipse_at_top,_hsl(var(--primary)/0.08),_transparent_55%)]" />
-
-      <Header />
 
       <section
         className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-28 md:px-10"

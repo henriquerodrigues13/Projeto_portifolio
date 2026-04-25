@@ -13,11 +13,15 @@ export default function Header() {
     <header className="fixed left-0 right-0 top-0 z-50 flex justify-center px-6 py-6 transition-all duration-300 md:px-10">
       <nav className="glass-panel flex w-full max-w-5xl items-center justify-between rounded-full px-5 py-2.5 shadow-2xl shadow-black/20">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <button 
+          className="flex cursor-pointer items-center gap-2 transition-transform hover:scale-105 active:scale-95"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          aria-label="Voltar ao topo"
+        >
           <div className="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-[13px] font-bold text-primary-foreground shadow-lg shadow-primary/20">
             HR
           </div>
-        </div>
+        </button>
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-1 md:flex">
