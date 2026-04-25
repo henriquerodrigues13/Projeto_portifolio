@@ -52,10 +52,12 @@ export default function Preloader({ onReady }) {
         duration: 0.8,
         ease: "power4.inOut",
         onComplete: () => {
-          if (onReady) onReady();
           setIsComplete(true);
         },
-      });
+      })
+      .call(() => {
+        if (onReady) onReady();
+      }, null, "-=0.2");
 
     return () => {
       clearInterval(scrambleInterval);

@@ -5,7 +5,8 @@ import { cn } from "../lib/utils.js";
 import { useMagnetic } from "../hooks/useMagnetic.js";
 
 export default function Hero() {
-  const magnetic = useMagnetic(0.16);
+  const magneticProjects = useMagnetic(0.16);
+  const magneticContact = useMagnetic(0.16);
 
   return (
     <main className="relative z-10 min-h-screen w-full overflow-hidden">
@@ -34,22 +35,22 @@ export default function Hero() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/50 opacity-60" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
             </span>
-            Aberto a colaborações pontuais
+            <span className="hero-content-enter hero-delay-2">Aberto a colaborações pontuais</span>
           </div>
 
           <h1
             className={cn(
-              "hero-enter hero-delay-2 tracking-tighter-custom text-balance text-5xl font-semibold leading-[1.08] text-foreground md:text-7xl lg:text-8xl"
+              "hero-enter hero-delay-3 tracking-tighter-custom text-balance text-5xl font-semibold leading-[1.08] text-foreground md:text-7xl lg:text-8xl"
             )}
           >
-            Interfaces que
+            Henrique
             <br />
-            <span className="text-gradient-hero">respiram clareza</span>
+            <span className="text-gradient-hero">Costa Rodrigues</span>
           </h1>
 
           <p
             className={cn(
-              "hero-enter hero-delay-3 mt-7 max-w-2xl text-balance text-lg font-light tracking-tight text-muted-foreground md:text-2xl"
+              "hero-enter hero-delay-4 mt-7 max-w-2xl text-balance text-lg font-light tracking-tight text-muted-foreground md:text-2xl"
             )}
           >
             Construo experiências web com ritmo, hierarquia impecável e detalhes
@@ -58,7 +59,7 @@ export default function Hero() {
 
           <p
             className={cn(
-              "hero-enter hero-delay-3 mt-4 max-w-xl text-sm text-muted-foreground/80 md:text-base"
+              "hero-enter hero-delay-5 mt-4 max-w-xl text-sm text-muted-foreground/80 md:text-base"
             )}
           >
             Front-end · Design systems · Prototipagem · Acessibilidade
@@ -66,23 +67,23 @@ export default function Hero() {
 
           <div
             className={cn(
-              "hero-enter hero-delay-4 mt-12 flex flex-col items-center gap-4 sm:flex-row sm:gap-5"
+              "mt-12 flex flex-col items-center gap-4 sm:flex-row sm:gap-5"
             )}
           >
             <Button
               size="lg"
               className={cn(
-                "btn-glow-subtle group relative overflow-hidden rounded-full shadow-lg shadow-primary/15 ring-1 ring-white/10 transition-transform duration-300 hover:scale-[1.03]"
+                "hero-enter hero-delay-6 btn-glow-subtle group relative overflow-hidden rounded-full shadow-lg shadow-primary/15 ring-1 ring-white/10 transition-transform duration-300 hover:scale-[1.03]"
               )}
-              ref={magnetic.ref}
-              onMouseMove={magnetic.onMouseMove}
-              onMouseLeave={magnetic.onMouseLeave}
+              ref={magneticProjects.ref}
+              onMouseMove={magneticProjects.onMouseMove}
+              onMouseLeave={magneticProjects.onMouseLeave}
               type="button"
               onClick={() => {
-                window.location.hash = "#projetos";
+                document.getElementById("projetos")?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <span className="relative z-10 flex items-center gap-2">
+              <span className="hero-content-enter hero-delay-7 relative z-10 flex items-center gap-2">
                 Ver projetos
                 <svg
                   className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
@@ -97,6 +98,23 @@ export default function Hero() {
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
               </span>
+            </Button>
+
+            <Button
+              variant="outline"
+              size="lg"
+              className={cn(
+                "hero-enter hero-delay-6 btn-glow-subtle group relative overflow-hidden rounded-full transition-transform duration-300 hover:scale-[1.03]"
+              )}
+              ref={magneticContact.ref}
+              onMouseMove={magneticContact.onMouseMove}
+              onMouseLeave={magneticContact.onMouseLeave}
+              type="button"
+              onClick={() => {
+                document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              <span className="hero-content-enter hero-delay-7 relative z-10">Entrar em contato</span>
             </Button>
           </div>
         </div>

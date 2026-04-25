@@ -66,14 +66,27 @@
 
   .text-gradient-hero {
     background: linear-gradient(
-      105deg,
-      hsl(var(--foreground) / 0.92),
-      hsl(var(--primary)),
-      hsl(var(--secondary) / 0.95)
+      to right,
+      hsl(var(--foreground) / 0.92) 0%,
+      hsl(var(--primary)) 25%,
+      hsl(var(--secondary)) 50%,
+      hsl(var(--primary)) 75%,
+      hsl(var(--foreground) / 0.92) 100%
     );
+    background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    animation: shine 12s linear infinite;
+  }
+
+  @keyframes shine {
+    from {
+      background-position: 0% center;
+    }
+    to {
+      background-position: -200% center;
+    }
   }
 
   .btn-glow-subtle {
@@ -114,11 +127,13 @@
   @keyframes hero-rise {
     0% {
       opacity: 0;
-      transform: translateY(26px) scale(0.985);
+      transform: translateY(30px) scale(0.98);
+      filter: blur(12px);
     }
     100% {
       opacity: 1;
       transform: translateY(0) scale(1);
+      filter: blur(0);
     }
   }
 
@@ -131,6 +146,7 @@
     filter: blur(0px);
     animation: gradient-drift 22s ease-in-out infinite;
     pointer-events: none;
+    opacity: 0.8;
   }
 
   .hero-grid {
@@ -144,27 +160,38 @@
     pointer-events: none;
   }
 
-  .app-loading .hero-enter {
+  @keyframes hero-content-fade {
+    0% { opacity: 0; filter: blur(10px); }
+    100% { opacity: 1; filter: blur(0); }
+  }
+
+  .app-loading .hero-enter,
+  .app-loading .hero-content-enter {
     opacity: 0;
   }
   
   .app-loaded .hero-enter {
     opacity: 0;
-    transform: translateY(26px) scale(0.985);
-    animation: hero-rise 0.88s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    filter: blur(12px);
+    animation: hero-rise 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) var(--hero-delay, 0s) forwards;
   }
-  .hero-delay-1 {
-    animation-delay: 0.12s;
+
+  .app-loaded .hero-content-enter {
+    opacity: 0;
+    filter: blur(10px);
+    animation: hero-content-fade 1.0s cubic-bezier(0.2, 0.8, 0.2, 1) var(--hero-delay, 0s) forwards;
   }
-  .hero-delay-2 {
-    animation-delay: 0.24s;
-  }
-  .hero-delay-3 {
-    animation-delay: 0.38s;
-  }
-  .hero-delay-4 {
-    animation-delay: 0.52s;
-  }
+
+  .hero-delay-1 { --hero-delay: 0.1s; }
+  .hero-delay-2 { --hero-delay: 0.2s; }
+  .hero-delay-3 { --hero-delay: 0.3s; }
+  .hero-delay-4 { --hero-delay: 0.4s; }
+  .hero-delay-5 { --hero-delay: 0.5s; }
+  .hero-delay-6 { --hero-delay: 0.6s; }
+  .hero-delay-7 { --hero-delay: 0.7s; }
+  .hero-delay-8 { --hero-delay: 0.8s; }
+  .hero-delay-9 { --hero-delay: 0.9s; }
+  .hero-delay-10 { --hero-delay: 1.0s; }
 
   /* Mesmo layout do Aura; z-index 0 evita ficar atrás do fundo opaco do body */
   #canvas-container {
