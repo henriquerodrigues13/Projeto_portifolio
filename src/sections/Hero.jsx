@@ -8,6 +8,20 @@ export default function Hero() {
   const magneticProjects = useMagnetic(0.16);
   const magneticContact = useMagnetic(0.16);
   const heroRef = useRef(null);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!heroRef.current) return;
+      const scrolled = window.scrollY;
+      if (scrolled < 800) {
+        heroRef.current.style.transform = `translateY(${scrolled * 0.35}px)`;
+        heroRef.current.style.opacity = `${1 - scrolled / 700}`;
+        heroRef.current.style.filter = `blur(${scrolled / 50}px)`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <main className="relative z-10 min-h-screen w-full overflow-hidden">
@@ -15,6 +29,7 @@ export default function Hero() {
       <div className="pointer-events-none fixed inset-0 z-[1] bg-[radial-gradient(ellipse_at_top,_hsl(var(--primary)/0.08),_transparent_55%)]" />
 
       <section
+        ref={heroRef}
         className="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-28 md:px-10"
         aria-label="Apresentação principal"
       >
@@ -103,12 +118,13 @@ export default function Hero() {
               variant="outline"
               size="lg"
               className={cn(
-                "hero-enter hero-delay-6 btn-glow-subtle group relative overflow-hidden rounded-full transition-transform duration-300 hover:scale-[1.03]"
+                "hero-enter hero-delay-6 group relative overflow-hidden rounded-full transition-transform duration-300 hover:scale-[1.03]"
               )}
               ref={magneticContact.ref}
               onMouseMove={magneticContact.onMouseMove}
               onMouseLeave={magneticContact.onMouseLeave}
               type="button"
+              style={{ backdropFilter: "none", WebkitBackdropFilter: "none" }}
               onClick={() => {
                 document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
               }}
@@ -121,4 +137,5 @@ export default function Hero() {
     </main>
   );
 }
+
 
