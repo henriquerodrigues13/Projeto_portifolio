@@ -64,19 +64,18 @@ export default function Hero() {
 
           <p
             className={cn(
-              "hero-enter hero-delay-4 mt-7 max-w-2xl text-balance text-lg font-light tracking-tight text-muted-foreground md:text-2xl"
+              "hero-enter hero-delay-4 mt-7 max-w-4xl text-lg font-light tracking-tight text-muted-foreground md:text-2xl"
             )}
           >
-            Construo experiências web com ritmo, hierarquia impecável e detalhes
-            que somam — do layout ao microcopy.
+            Transformando dados em decisões que aceleram crescimento <br className="hidden md:block" /> — com engenharia eficiente, análise estratégica e ciência que entrega impacto.
           </p>
 
           <p
             className={cn(
-              "hero-enter hero-delay-5 mt-4 max-w-xl text-sm text-muted-foreground/80 md:text-base"
+              "hero-enter hero-delay-5 mt-4 max-w-none whitespace-nowrap text-sm text-muted-foreground/80 md:text-base"
             )}
           >
-            Front-end · Design systems · Prototipagem · Acessibilidade
+            Analista de Dados - Engenheiro de Dados - Cientista de Dados - Vibe Design 
           </p>
 
           <div

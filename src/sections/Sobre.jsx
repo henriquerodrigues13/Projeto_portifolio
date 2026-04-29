@@ -49,8 +49,8 @@ export default function Sobre() {
 
     // Continuous floating animation for image
     gsap.to(".floating-image", {
-      y: -15,
-      duration: 3,
+      y: -6,
+      duration: 4.5,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut"
@@ -75,9 +75,8 @@ export default function Sobre() {
           </div>
           
           <div className="rounded-[2rem] bg-zinc-200/80 p-8 md:p-10 shadow-2xl shadow-black/20 border border-white/20">
-            <h2 className="mb-6 text-balance text-3xl font-semibold tracking-tighter-custom text-black md:text-4xl lg:text-5xl">
-              Onde o código encontra o{" "}
-              <span className="font-bold text-shine-blue">Design</span>
+            <h2 className="mb-6 text-balance text-3xl font-semibold tracking-tighter-custom text-black md:text-4xl lg:text-5xl leading-tight">
+              Quem é o <br /> <span className="font-bold text-shine-blue pb-2 inline-block">Henrique Rodrigues</span>
             </h2>
             
             <div className="space-y-4 text-sm font-light leading-relaxed text-zinc-900 md:text-base">
