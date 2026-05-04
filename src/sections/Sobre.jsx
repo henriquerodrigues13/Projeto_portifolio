@@ -75,38 +75,34 @@ export default function Sobre() {
           </div>
           
           <div className="rounded-[2rem] bg-zinc-200/80 p-8 md:p-10 shadow-2xl shadow-black/20 border border-white/20">
-            <h2 className="mb-6 text-balance text-3xl font-semibold tracking-tighter-custom text-black md:text-4xl lg:text-5xl leading-tight">
-              Quem é o <br /> <span className="font-bold text-shine-blue pb-2 inline-block">Henrique Rodrigues</span>
+            <h2 className="mb-2 text-2xl font-semibold tracking-tighter-custom text-black md:text-3xl lg:text-4xl leading-tight">
+              Quem é <span className="font-bold text-shine-blue pb-2 inline-block">Henrique Rodrigues</span>
             </h2>
             
-            <div className="space-y-4 text-sm font-light leading-relaxed text-zinc-900 md:text-base">
+            <div className="space-y-4 text-justify text-sm font-light leading-relaxed text-zinc-900 md:text-base">
               <p>
-                Olá! Eu sou <span className="font-bold text-shine-blue">Henrique Rodrigues</span>, 
-                um desenvolvedor apaixonado por criar interfaces que não apenas funcionam, mas 
-                contam uma história através da clareza e do movimento.
+                Discente do curso de <span className="font-bold text-black">Sistemas de Informação</span> na <span className="font-bold text-black">Universidade Federal do Pará (UFPA)</span>, com ênfase em manipulação, visualização e predição de dados. Sua trajetória é orientada por um objetivo claro: tornar-se um <span className="font-bold text-black">Engenheiro de Dados</span> com domínio em <span className="font-bold text-black">ciência de dados</span> e desenvolvimento de <span className="font-bold text-black">dashboards analíticos</span>.
               </p>
               
               <p>
-                Minha jornada no desenvolvimento web começou com a curiosidade de como 
-                transformar pixels estáticos em experiências vivas. Hoje, foco em construir 
-                sistemas escaláveis e design systems que unem estética e performance.
+                Desde o início da graduação, em outubro de 2025, vem construindo uma base técnica consistente — com desenvolvimento ativo em <span className="font-bold text-black">Python</span> e suas bibliotecas (<span className="font-bold text-black">Pandas</span>, <span className="font-bold text-black">SQLAlchemy</span>, <span className="font-bold text-black">FastAPI</span> e <span className="font-bold text-black">Streamlit</span>), estudos em JavaScript e Java, e uso contínuo de ferramentas como <span className="font-bold text-black">Docker</span> e <span className="font-bold text-black">Git</span>. Acredita que <span className="font-bold text-black">dados</span> bem trabalhados são a base para uma boa tomada de <span className="font-bold text-black">decisão</span>, e é nessa interseção que pretende atuar.
               </p>
             </div>
 
-            <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-black/10 pt-6">
+            <div className="mt-6 flex flex-wrap items-center gap-6 border-t border-black/10 pt-6">
               <div className="flex flex-col gap-1">
-                <span className="text-xl font-bold text-black">3+</span>
-                <span className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold">Anos de XP</span>
+                <span className="text-xl font-bold text-black">2 anos</span>
+                <span className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold">de Prática</span>
               </div>
               <div className="h-8 w-px bg-black/10 hidden sm:block" />
               <div className="flex flex-col gap-1">
-                <span className="text-xl font-bold text-black">50+</span>
-                <span className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold">Projetos</span>
+                <span className="text-xl font-bold text-black">5+ Repositórios</span>
+                <span className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold">No GitHub</span>
               </div>
               <div className="h-8 w-px bg-black/10 hidden sm:block" />
               <div className="flex flex-col gap-1">
-                <span className="text-xl font-bold text-black text-nowrap">UI/UX</span>
-                <span className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold">Especialista</span>
+                <span className="text-xl font-bold text-black text-nowrap">Eng. de Dados</span>
+                <span className="text-[9px] uppercase tracking-widest text-zinc-600 font-bold">Em Formação</span>
               </div>
             </div>
           </div>
