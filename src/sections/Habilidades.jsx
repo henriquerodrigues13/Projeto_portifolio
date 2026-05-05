@@ -65,9 +65,8 @@ export default function Habilidades() {
             </div>
             <h3 className="mb-3 font-medium text-white">Linguagens</h3>
             <ul className="flex flex-col space-y-2 text-sm text-zinc-400">
-              <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-purple-500"></span>C / C++</li>
               <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-purple-500"></span>Python</li>
-              <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-purple-500"></span>Java</li>
+              <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-purple-500"></span>JavaScript</li>
             </ul>
           </div>
 
@@ -76,7 +75,7 @@ export default function Habilidades() {
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-400 transition-transform duration-300 group-hover:scale-110">
               <Globe size={24} />
             </div>
-            <h3 className="mb-3 font-medium text-white">Desenvolvimento Web</h3>
+            <h3 className="mb-3 font-medium text-white">Front End</h3>
             <ul className="flex flex-col space-y-2 text-sm text-zinc-400">
               <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-indigo-500"></span>HTML & CSS</li>
               <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-indigo-500"></span>React.js</li>

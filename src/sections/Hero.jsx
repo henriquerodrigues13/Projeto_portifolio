@@ -67,7 +67,7 @@ export default function Hero() {
               "hero-enter hero-delay-4 mt-7 max-w-4xl text-lg font-light tracking-tight text-muted-foreground md:text-2xl"
             )}
           >
-            Transformando dados em decisões que aceleram crescimento <br className="hidden md:block" /> — com engenharia eficiente, análise estratégica e ciência que entrega impacto.
+            Transformando dados em decisões que aceleram o crescimento <br className="hidden md:block" /> — com engenharia eficiente, análise estratégica e ciência que causa impacto.
           </p>
 
           <p

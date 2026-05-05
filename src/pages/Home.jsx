@@ -6,12 +6,14 @@ import Projetos from "../sections/Projetos.jsx";
 import Jornada from "../sections/Jornada.jsx";
 import Sobre from "../sections/Sobre.jsx";
 import { useReveal } from "../hooks/useReveal.js";
+import ScrollProgressBar from "../components/ui/ScrollProgressBar.jsx";
 
 export default function Home() {
   useReveal();
 
   return (
     <div className="relative z-10">
+      <ScrollProgressBar />
       <Hero />
       <Sobre />
       <Habilidades />
