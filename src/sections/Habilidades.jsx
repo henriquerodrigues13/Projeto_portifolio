@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { Terminal, Globe, Bot, Settings2 } from 'lucide-react';
+import { Terminal, Layers2, ServerCog, Settings2 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,12 +73,12 @@ export default function Habilidades() {
           {/* Web Development */}
           <div className="skill-fade-element group flex flex-col rounded-2xl bg-zinc-900/40 p-6 border border-white/5 transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.15)] hover:border-white/10">
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-400 transition-transform duration-300 group-hover:scale-110">
-              <Globe size={24} />
+              <Layers2 size={24} />
             </div>
             <h3 className="mb-3 font-medium text-white">Front End</h3>
             <ul className="flex flex-col space-y-2 text-sm text-zinc-400">
-              <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-indigo-500"></span>HTML & CSS</li>
-              <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-indigo-500"></span>React.js</li>
+              <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-indigo-500"></span>React.js + TypeScript</li>
+              <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-indigo-500"></span>TanStack Query + React Hook Form</li>
               <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-indigo-500"></span>Tailwind CSS</li>
             </ul>
           </div>
@@ -87,13 +87,13 @@ export default function Habilidades() {
           <div className="skill-fade-element group relative overflow-hidden flex flex-col rounded-2xl bg-zinc-900/40 p-6 border border-purple-500/20 transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(168,85,247,0.3)] hover:border-purple-500/40">
             <div className="absolute inset-0 bg-gradient-to-b from-purple-500/5 to-transparent pointer-events-none"></div>
             <div className="mb-4 relative z-10 flex h-10 w-10 items-center justify-center rounded-lg bg-fuchsia-500/10 text-fuchsia-400 transition-transform duration-300 group-hover:scale-110">
-              <Bot size={24} />
+              <ServerCog size={24} />
             </div>
-            <h3 className="mb-3 relative z-10 font-medium text-white">IA</h3>
+            <h3 className="mb-3 relative z-10 font-medium text-white">Back End</h3>
             <ul className="flex relative z-10 flex-col space-y-2 text-sm text-zinc-400">
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-fuchsia-500"></span>Aprendizado de Máquina & Deep Learning</li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-fuchsia-500"></span>Visão Computacional & PLN</li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-fuchsia-500"></span>Integração & Implementação de IA</li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-fuchsia-500"></span>FastAPI</li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-fuchsia-500"></span>SQLAlchemy + Alembic + Pydantic</li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-fuchsia-500"></span>PyJWT</li>
             </ul>
           </div>
 
@@ -105,8 +105,8 @@ export default function Habilidades() {
             <h3 className="mb-3 font-medium text-white">Ferramentas e Práticas</h3>
             <ul className="flex flex-col space-y-2 text-sm text-zinc-400">
               <li className="flex items-center gap-2"><span className="h-1 w-1 shrink-0 rounded-full bg-slate-500"></span>Git & GitHub</li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-slate-500"></span>Fluxos de ML & Desenvolvimento de Modelos</li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-slate-500"></span>Design UI/UX & Prototipagem</li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-slate-500"></span>Docker</li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-slate-500"></span>Vibe Design</li>
             </ul>
           </div>
 
