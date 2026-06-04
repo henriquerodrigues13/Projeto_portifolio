@@ -45,7 +45,7 @@ export default function Contato() {
         <div className="mt-16 flex flex-col items-center gap-6 md:flex-row md:gap-8">
           
           {/* Email Button */}
-          <a href="mailto:seuemail@exemplo.com" className="group relative">
+          <a href="mailto:henrique.c.rodrigues1412@gmail.com" className="group relative">
             <div className="absolute -inset-0.5 rounded-full bg-gradient-to-r from-primary to-purple-600 opacity-30 blur transition duration-500 group-hover:opacity-100"></div>
             <Button size="lg" className="relative h-14 rounded-full bg-white px-8 text-black transition-transform duration-300 hover:scale-105 active:scale-95">
               <span className="flex items-center gap-2 font-bold uppercase tracking-widest text-[10px]">
@@ -58,7 +58,7 @@ export default function Contato() {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <a 
-              href="https://github.com" 
+              href="https://github.com/henriquerodrigues13" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white transition-all duration-300 hover:scale-110 hover:bg-white/10 hover:border-white/20"
@@ -74,6 +74,19 @@ export default function Contato() {
               title="LinkedIn"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a 
+              href="https://wa.me/5591987444324" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-white/10 bg-white/5 text-emerald-400 transition-all duration-300 hover:scale-110 hover:bg-white/10 hover:border-white/20"
+              title="WhatsApp"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-whatsapp">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
+              </svg>
             </a>
             
             {/* Resume Button */}
